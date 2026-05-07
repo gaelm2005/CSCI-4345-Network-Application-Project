@@ -1,43 +1,45 @@
-**Prerequisites & Setup**
+# Prerequisites & Setup
 
     Create a Virtual Environment: Set up and activate a Python virtual environment.
 
     Install Python Dependencies: Navigate to the scripts directory and install the required packages.
 
-**pip install -r requirements.txt**
+```Bash
+pip install -r requirements.txt
+```
 
-Install Aircrack-ng: The Wi-Fi scanning script requires airmon-ng. This tool comes pre-installed on Kali Linux. For other Debian-based systems, install it via your package manager:
-Bash
+Install Aircrack-ng:  The Wi-Fi scanning script requires airmon-ng. This tool comes pre-installed on Kali Linux. For other Debian-based systems, install it via your package manager:
+
 
     sudo apt install aircrack-ng
 
-How to Run the Scripts
-Wi-Fi Scanner (wifi_scanner.py)
+## How to Run the Scripts
+**wifi_scanner.py**
 
     Disclaimer: This script is designed specifically for Linux-based machines.
 
 Step 1: Identify your Network Interface Run the following command in your terminal to find your wireless interface name (it will look something like wlp0s20f3):
-Bash
 
+```
 ifconfig
-
+```
 Step 2: Enable Monitor Mode Execute the following commands to put your network card into monitor mode. Be sure to replace wlp0s20f3 with your actual interface name if it differs:
-Bash
-
+```
 sudo airmon-ng check kill
 sudo ip link set wlp0s20f3 up
 sudo airmon-ng start wlp0s20f3 
+```
+**Note: Depending on your system, starting airmon-ng may append a mon suffix to your interface name (e.g., wlp0s20f3mon).**
 
-Note: Depending on your system, starting airmon-ng may append a mon suffix to your interface name (e.g., wlp0s20f3mon).
+Step 3: Open a separate terminal window, navigate to the directory where wifi_scanner.py is located, and run the script as root user:
 
-Step 3: Execute the Script Open a separate terminal window, navigate to the directory where wifi_scanner.py is located, and run the script with elevated privileges:
-Bash
-
+```
 sudo $(which python) wifi_scanner.py
+```
+**port_scanner.py**
 
-Port Scanner (port_scanner.py)
+To run the port scanner, simply navigate to the script's directory and execute it using this command:
 
-To run the port scanner, simply navigate to the script's directory and execute it using Python 3:
-Bash
-
+```
 python3 port_scanner.py
+```
