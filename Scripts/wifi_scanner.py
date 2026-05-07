@@ -46,7 +46,7 @@ def change_channel():
 
 if __name__ == "__main__":
     # interface name, check using ifconfig
-    interface = "wlp0s20f3mon"
+    interface = "wlp0s20f3mon" '''<- change this depending on your interface name'''
     # start the thread that prints all the networks
     printer = Thread(target=print_all)
     printer.daemon = True
