@@ -34,7 +34,8 @@ sudo airmon-ng start wlp0s20f3
 Step 3: Open a separate terminal window, navigate to the directory where wifi_scanner.py is located, and run the script as root user:
 
 ```
-sudo $(which python) wifi_scanner.py
+sudo $(which python) wifi_scanner.py <- if executing from a virtual environment
+sudo wifi_scanner.py <- not in a virtual environment
 ```
 **port_scanner.py**
 
