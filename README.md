@@ -44,3 +44,11 @@ To run the port scanner, simply navigate to the script's directory and execute i
 ```
 python3 port_scanner.py
 ```
+
+**ensemble.py**
+This script is a combination of the two scripts above. Hence the name ensemble. 
+To run this script use the following command.
+'''
+sudo $(which python) ensemble.py <- if executing from a virtual environment
+sudo ensemble.py <- not in a virtual environment
+'''
